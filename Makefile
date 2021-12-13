@@ -17,6 +17,10 @@ build: deps fmt
 	#@CGO_ENABLED=0 GOOS=linux GOARCH=arm64 tinygo build -o $(BIN)_linux_arm64 .  && strip $(BIN)_linux_arm64 && upx -9 $(BIN)_linux_arm64
 	@CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -ldflags="-s -w" -o $(BIN)_linux_arm64 . && upx -9 $(BIN)_linux_arm64
 	@echo $(BIN)_linux_arm64
+	@CGO_ENABLED=0 GOOS=linux GOARCH=386 go build -ldflags="-s -w" -o $(BIN)_linux_386 . && upx -9 $(BIN)_linux_386
+	@echo $(BIN)_linux_386
+	@CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o $(BIN)_linux_amd64 . && upx -9 $(BIN)_linux_amd64
+	@echo $(BIN)_linux_amd64
 	@CGO_ENABLED=0 GOOS=windows GOARCH=386 go build -ldflags="-s -w" -o $(BIN)_windows_386.exe . && upx -9 $(BIN)_windows_386.exe
 	@echo $(BIN)_windows_386.exe
 	@CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o $(BIN)_windows_amd64.exe . && upx -9 $(BIN)_windows_amd64.exe
