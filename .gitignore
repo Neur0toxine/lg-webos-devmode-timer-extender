@@ -1,5 +1,5 @@
-# Binaries for programs and plugins
-*.exe
+# Binaries
+devmode-extender_*
 *.exe~
 *.dll
 *.so
@@ -12,4 +12,7 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+vendor/
+
+# IDE files.
+.idea
